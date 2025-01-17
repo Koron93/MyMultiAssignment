@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using System.Collections.Generic;
 using System.Linq;
 
 public class ObjectPoolManager : MonoBehaviour
@@ -9,8 +8,8 @@ public class ObjectPoolManager : MonoBehaviour
     public static List<PooledObjectInfo> ObjectPools = new List<PooledObjectInfo>();
 
     // Method to spawn a networked object from the pool
-    [ServerRpc]
-    public static GameObject SpawnObject(GameObject objectToSpawn, Vector3 spawnPosition, Quaternion spawnRotation)
+    [ServerRpc(RequireOwnership = false)]  // Make sure clients can request spawning even if they don't own the object
+    public static GameObject SpawnObjectServerRpc(GameObject objectToSpawn, Vector3 spawnPosition, Quaternion spawnRotation, ulong clientId)
     {
         // Find the pool based on the object's name
         PooledObjectInfo pool = ObjectPools.Find(n => n.LookupString == objectToSpawn.name);
@@ -37,10 +36,10 @@ public class ObjectPoolManager : MonoBehaviour
                 networkObject.Spawn(); // This will spawn the object across the network
             }
 
-            // If this is a player-controlled object, assign ownership (optional)
-            if (networkObject != null && networkObject.IsOwner)
+            // Assign ownership to the client who is requesting the spawn
+            if (networkObject != null && !networkObject.IsOwner)
             {
-                networkObject.ChangeOwnership(NetworkManager.Singleton.LocalClientId); // Assign ownership to the client
+                networkObject.ChangeOwnership(clientId); // Assign ownership to the requesting client
             }
         }
         else
@@ -56,6 +55,12 @@ public class ObjectPoolManager : MonoBehaviour
             if (networkObject != null && !networkObject.IsSpawned)
             {
                 networkObject.Spawn(); // Ensure it's properly spawned on the network
+            }
+
+            // Reassign ownership to the client who is reusing the object
+            if (networkObject != null && !networkObject.IsOwner)
+            {
+                networkObject.ChangeOwnership(clientId); // Reassign ownership to the current client
             }
         }
 

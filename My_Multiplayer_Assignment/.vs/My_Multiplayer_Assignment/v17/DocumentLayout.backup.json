@@ -3,40 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|c:\\users\\axellarsson\\my_multiplayer_assignment\\assets\\muh_stuff\\scripts\\playerscripts\\playershoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|solutionrelative:assets\\muh_stuff\\scripts\\playerscripts\\playershoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\assets\\muh_stuff\\scripts\\icelancescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|c:\\users\\axellarsson\\my_multiplayer_assignment\\assets\\muh_stuff\\scripts\\icelancescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|solutionrelative:assets\\muh_stuff\\scripts\\icelancescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\assets\\muh_stuff\\scripts\\objectpoolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|c:\\users\\axellarsson\\my_multiplayer_assignment\\assets\\muh_stuff\\scripts\\playerscripts\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|solutionrelative:assets\\muh_stuff\\scripts\\playerscripts\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|c:\\users\\axellarsson\\my_multiplayer_assignment\\assets\\muh_stuff\\scripts\\objectpoolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|solutionrelative:assets\\muh_stuff\\scripts\\objectpoolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\assets\\muh_stuff\\scripts\\dungeongenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|solutionrelative:assets\\muh_stuff\\scripts\\dungeongenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\assets\\muh_stuff\\scripts\\roombehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|solutionrelative:assets\\muh_stuff\\scripts\\roombehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\assets\\muh_stuff\\scripts\\states\\statemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|solutionrelative:assets\\muh_stuff\\scripts\\states\\statemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\assets\\muh_stuff\\scripts\\playerscripts\\clientplayerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|solutionrelative:assets\\muh_stuff\\scripts\\playerscripts\\clientplayerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\assets\\muh_stuff\\scripts\\chatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|solutionrelative:assets\\muh_stuff\\scripts\\chatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\assets\\muh_stuff\\scripts\\playerscripts\\playermovementscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B08AB9AC-8AE1-4EC1-C91B-9A2267FC5E91}|Assembly-CSharp.csproj|solutionrelative:assets\\muh_stuff\\scripts\\playerscripts\\playermovementscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,20 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ChatManager.cs",
-              "DocumentMoniker": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\ChatManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Muh_Stuff\\Scripts\\ChatManager.cs",
-              "ToolTip": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\ChatManager.cs",
-              "RelativeToolTip": "Assets\\Muh_Stuff\\Scripts\\ChatManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T12:04:19.523Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -68,99 +32,35 @@
               "RelativeDocumentMoniker": "Assets\\Muh_Stuff\\Scripts\\ObjectPoolManager.cs",
               "ToolTip": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\ObjectPoolManager.cs",
               "RelativeToolTip": "Assets\\Muh_Stuff\\Scripts\\ObjectPoolManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAA2wGgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T11:53:13.172Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StateManager.cs",
-              "DocumentMoniker": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\States\\StateManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Muh_Stuff\\Scripts\\States\\StateManager.cs",
-              "ToolTip": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\States\\StateManager.cs",
-              "RelativeToolTip": "Assets\\Muh_Stuff\\Scripts\\States\\StateManager.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAawDkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T10:18:09.554Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ClientPlayerScript.cs",
-              "DocumentMoniker": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\ClientPlayerScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\ClientPlayerScript.cs",
-              "ToolTip": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\ClientPlayerScript.cs",
-              "RelativeToolTip": "Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\ClientPlayerScript.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T10:17:15.628Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PlayerMovementScript.cs",
-              "DocumentMoniker": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\PlayerMovementScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\PlayerMovementScript.cs",
-              "ToolTip": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\PlayerMovementScript.cs",
-              "RelativeToolTip": "Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\PlayerMovementScript.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T10:17:14.101Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RoomBehaviour.cs",
-              "DocumentMoniker": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\RoomBehaviour.cs",
-              "RelativeDocumentMoniker": "Assets\\Muh_Stuff\\Scripts\\RoomBehaviour.cs",
-              "ToolTip": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\RoomBehaviour.cs",
-              "RelativeToolTip": "Assets\\Muh_Stuff\\Scripts\\RoomBehaviour.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T08:55:33.644Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Dungeongenerator.cs",
-              "DocumentMoniker": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\Dungeongenerator.cs",
-              "RelativeDocumentMoniker": "Assets\\Muh_Stuff\\Scripts\\Dungeongenerator.cs",
-              "ToolTip": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\Dungeongenerator.cs",
-              "RelativeToolTip": "Assets\\Muh_Stuff\\Scripts\\Dungeongenerator.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAuwJMAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T07:32:44.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PlayerShoot.cs",
-              "DocumentMoniker": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\PlayerShoot.cs",
-              "RelativeDocumentMoniker": "Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\PlayerShoot.cs",
-              "ToolTip": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\PlayerShoot.cs",
-              "RelativeToolTip": "Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\PlayerShoot.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAA1wCkAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T07:18:34.449Z",
+              "WhenOpened": "2025-01-17T15:42:01.195Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "PlayerHealth.cs",
+              "DocumentMoniker": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\PlayerHealth.cs",
+              "RelativeDocumentMoniker": "Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\PlayerHealth.cs",
+              "ToolTip": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\PlayerHealth.cs",
+              "RelativeToolTip": "Assets\\Muh_Stuff\\Scripts\\PlayerScripts\\PlayerHealth.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T15:20:33.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "iceLanceScript.cs",
               "DocumentMoniker": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\iceLanceScript.cs",
               "RelativeDocumentMoniker": "Assets\\Muh_Stuff\\Scripts\\iceLanceScript.cs",
               "ToolTip": "C:\\Users\\AxelLarsson\\My_Multiplayer_Assignment\\Assets\\Muh_Stuff\\Scripts\\iceLanceScript.cs",
               "RelativeToolTip": "Assets\\Muh_Stuff\\Scripts\\iceLanceScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowEYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T07:17:48.192Z",
+              "WhenOpened": "2025-01-17T14:36:58.758Z",
               "EditorCaption": ""
             }
           ]

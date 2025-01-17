@@ -10278,7 +10278,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 10
+    type: 0
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -13416,7 +13416,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -14490,7 +14490,7 @@ MonoBehaviour:
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 1
   SceneMigrationSynchronization: 0
-  SpawnWithObservers: 0
+  SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 0
   SyncOwnerTransformWhenParented: 1
@@ -14508,6 +14508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  particleSystem: {fileID: 7323953266013716381}
   Lance: {fileID: 4547415183332423262}
 --- !u!114 &2465768638340040653
 MonoBehaviour:

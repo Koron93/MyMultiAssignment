@@ -131,6 +131,7 @@ public class StateManager : NetworkBehaviour
         ClientList.Add(new NetworkClient { ClientId = clientid, playerObject = playerobject });
         player_M.Add(playerobject.GetComponent<PlayerMovementScript>());
         player_S.Add(playerobject.GetComponent<PlayerShoot>());
+        print(clientid); print(playerobject);
         //if (StartPosition == new Vector3(0,0,0) && !IsHost)
         //{
         //    Point = DungeonGen.GetComponent<PlacingFinalPoint>();
