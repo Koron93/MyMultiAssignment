@@ -1,17 +1,18 @@
 using UnityEngine;
 using Unity.Netcode;
+using System.Collections;
 
 public class PlayerShoot : NetworkBehaviour
 {
-    [SerializeField] private GameObject projectilePrefab;  // Reference to the projectile prefab
-    [SerializeField] private Transform firePoint;     // The point where the projectile spawns (usually near the camera or weapon)
+    [SerializeField] private GameObject projectilePrefab; // Reference to the networked projectile prefab
+    [SerializeField] private Transform firePoint; // The point where the projectile spawns
 
     public override void OnNetworkSpawn()
     {
-        // Ensure the script only runs for the owning client
+        // Ensure this script only runs for the owning client
         if (!IsOwner)
         {
-            enabled = false;  // Disable the shooting script on clients that don't own the object
+            enabled = false; // Disable the shooting script on clients that don't own the object
         }
     }
 
@@ -21,6 +22,7 @@ public class PlayerShoot : NetworkBehaviour
         {
             // Only the owner (local client) can shoot
             ShootProjectile();
+            print("got this far");
         }
     }
 
@@ -29,23 +31,25 @@ public class PlayerShoot : NetworkBehaviour
     {
         if (projectilePrefab != null && firePoint != null)
         {
-            // Call the networked method to spawn the projectile
+            // Call a ServerRpc to spawn the projectile on the server
+            print("Now im here");
             SpawnProjectileServerRpc(firePoint.position, firePoint.rotation);
         }
     }
 
-    // ServerRpc to spawn the projectile on the server and replicate it to all clients
     [ServerRpc]
     void SpawnProjectileServerRpc(Vector3 position, Quaternion rotation)
     {
-        // Instantiate the projectile on the server
-        GameObject projectile = ObjectPoolManager.SpawnObject(projectilePrefab, new Vector3(position.x, 1.1f, position.z), rotation);
+        print("Server has received the request to spawn projectile");
 
-        // Spawn it across the network
+        // Call the object pool to spawn the projectile on the server
+        GameObject projectile = ObjectPoolManager.SpawnObject(projectilePrefab, position, rotation);
+
+        // Ensure the projectile has a NetworkObject component and spawn it across the network
         NetworkObject networkObject = projectile.GetComponent<NetworkObject>();
         if (networkObject != null && !networkObject.IsSpawned)
         {
-            networkObject.Spawn();  // This will spawn the object on all clients
+            networkObject.Spawn(); // This spawns the object across the network
         }
     }
 }

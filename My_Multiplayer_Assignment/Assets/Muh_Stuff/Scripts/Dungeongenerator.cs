@@ -20,8 +20,8 @@ public class Dungeongenerator : NetworkBehaviour
     public bool Dungeon = false;
     public void  DungeonStart()
     {
-        Vector2x = Random.Range(1, 2);
-        Vector2y = Random.Range(1, 2);
+        Vector2x = Random.Range(3, 5);
+        Vector2y = Random.Range(3, 5);
         size = new Vector2(Vector2x, Vector2y);
         MazeGenerator();
     }
@@ -158,11 +158,9 @@ public class Dungeongenerator : NetworkBehaviour
                     continue; // Skip this iteration if no NetworkObject is found
                 }
 
-                newRoom.name += " " + i + "-" + j;
-
                 // Spawn the networked object for all clients
                 print("About to spawn newRoom");
-                networkObject.Spawn();  // This will register the object on the network and synchronize it across all clients
+                newRoom.name += " " + i + "-" + j;
                 newRoom.UpdateRoomServerRpc(currentCell.status);// Update the room's state via RPC
                 print("Spawned newRoom");
                 // Optionally, ensure the object is being synchronized by logging network status

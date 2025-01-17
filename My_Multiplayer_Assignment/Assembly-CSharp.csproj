@@ -79,6 +79,7 @@
     <Compile Include="Assets\UnityTechnologies\ParticlePack\Shared\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\UnityTechnologies\ParticlePack\Shared\Scripts\SimpleCharacterMotor.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Muh_Stuff\Scripts\ChatManager.cs" />
     <Compile Include="Assets\Muh_Stuff\Scripts\ObjectPoolManager.cs" />
     <Compile Include="Assets\Muh_Stuff\Scripts\States\StateManager.cs" />
   </ItemGroup>

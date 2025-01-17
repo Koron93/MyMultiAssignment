@@ -30,19 +30,6 @@ public class PlayerMovementScript : MonoBehaviour
         transform.Rotate(0, XInput * sensitivity, 0);
         rotationX = Mathf.Clamp(rotationX, -90f, 90f);
         m_Camera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        if (Input.GetKey(KeyCode.Q))
-        {
-            if (Cursor.visible)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-            if (!Cursor.visible)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
-        }
     }
     public void ChechAnimation()
     {

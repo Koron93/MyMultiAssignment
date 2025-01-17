@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
 using Unity.Netcode;
 
 public class RoomBehaviour : NetworkBehaviour
@@ -20,13 +18,10 @@ public class RoomBehaviour : NetworkBehaviour
     [ClientRpc]
     public void UpdateRoomClientRpc(bool[] status)
     {
-        if (IsOwner || IsServer)
+        for (int i = 0; i < status.Length; i++)
         {
-            for (int i = 0; i < status.Length; i++)
-            {
-                doors[i].SetActive(status[i]);  // Set door active based on status
-                walls[i].SetActive(!status[i]); // Set wall inactive when the door is open
-            }
+            doors[i].SetActive(status[i]);  // Set door active based on status
+            walls[i].SetActive(!status[i]); // Set wall inactive when the door is open
         }
     }
 }
