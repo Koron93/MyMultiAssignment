@@ -2,6 +2,7 @@ using UnityEngine;
 using Unity.Netcode;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 public class StateManager : NetworkBehaviour
 {
     public static GameState CurrentState;
@@ -51,6 +52,9 @@ public class StateManager : NetworkBehaviour
     List<GameObject> room = new List<GameObject>();
     private List<PlayerShoot>player_S = new List<PlayerShoot>();
     [SerializeField] GameObject Lance;
+    [SerializeField] GameObject button1;
+    [SerializeField] GameObject button2;
+    [SerializeField] GameObject button3;
     private void HandleStateUpdate(GameState state)
     {
         switch (state)
@@ -85,9 +89,29 @@ public class StateManager : NetworkBehaviour
                 // Handle Gameplay state logic
                 foreach (PlayerMovementScript Player in player_M)
                 {
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.visible = false;
-                    Player.Rotation();
+                    if (Input.GetKey(KeyCode.Q))
+                    {
+                        if (Cursor.visible)
+                        {
+                            button1.SetActive(false);
+                            button2.SetActive(false);
+                            button3.SetActive(false);
+                            Cursor.lockState = CursorLockMode.Locked;
+                            Cursor.visible = false;
+                        }
+                    }
+                    if (Input.GetKey(KeyCode.E))
+                    {
+                        if (!Cursor.visible)
+                        {
+                            button1.SetActive(true);
+                            button2.SetActive(true);
+                            button3.SetActive(true);
+                            Cursor.lockState = CursorLockMode.None;
+                            Cursor.visible = true;
+                        }
+                    }
+                        Player.Rotation();
                     Player.Movement();
                     Player.ChechAnimation();
                 }
@@ -107,6 +131,7 @@ public class StateManager : NetworkBehaviour
         ClientList.Add(new NetworkClient { ClientId = clientid, playerObject = playerobject });
         player_M.Add(playerobject.GetComponent<PlayerMovementScript>());
         player_S.Add(playerobject.GetComponent<PlayerShoot>());
+        print(clientid); print(playerobject);
         //if (StartPosition == new Vector3(0,0,0) && !IsHost)
         //{
         //    Point = DungeonGen.GetComponent<PlacingFinalPoint>();

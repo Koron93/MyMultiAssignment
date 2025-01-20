@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Netcode;
 
-public class PlacingFinalPoint : NetworkBehaviour
+public class PlacingFinalPoint : MonoBehaviour
 {
     List<DataTile> AllRooms;
     private HashSet<DataTile> Rooms(DataTile StartTile)

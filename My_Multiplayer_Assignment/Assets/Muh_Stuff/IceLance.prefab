@@ -9619,8 +9619,8 @@ GameObject:
   - component: {fileID: 6475763520075610574}
   - component: {fileID: 7323953266013716381}
   - component: {fileID: 3024393516020843864}
-  - component: {fileID: 85181985926962557}
   - component: {fileID: 9166612316454231826}
+  - component: {fileID: 85181985926962557}
   - component: {fileID: 2465768638340040653}
   m_Layer: 0
   m_Name: IceLance
@@ -9628,7 +9628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6475763520075610574
 Transform:
   m_ObjectHideFlags: 0
@@ -10278,7 +10278,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 10
+    type: 0
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -13416,7 +13416,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -14470,20 +14470,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &85181985926962557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4547415183332423262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d091ecb8639144795461ff7d1f6474, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  Lance: {fileID: 4547415183332423262}
 --- !u!114 &9166612316454231826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14503,12 +14489,27 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 1
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 1
-  SceneMigrationSynchronization: 1
+  SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
-  DontDestroyWithOwner: 1
-  AutoObjectParentSync: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 0
   SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 1
+  AllowOwnerToParent: 0
+--- !u!114 &85181985926962557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4547415183332423262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d091ecb8639144795461ff7d1f6474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  particleSystem: {fileID: 7323953266013716381}
+  Lance: {fileID: 4547415183332423262}
 --- !u!114 &2465768638340040653
 MonoBehaviour:
   m_ObjectHideFlags: 0
