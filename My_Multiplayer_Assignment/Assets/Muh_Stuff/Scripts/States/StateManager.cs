@@ -3,6 +3,7 @@ using Unity.Netcode;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
+using System.Diagnostics;
 public class StateManager : NetworkBehaviour
 {
     public static GameState CurrentState;
@@ -20,9 +21,9 @@ public class StateManager : NetworkBehaviour
 
     private void Update()
     {
-            // Update logic for different states can go here, for example:
-            UpdateGameStateClientRpc(CurrentState);
-            HandleStateUpdate(CurrentState);
+        // Update logic for different states can go here, for example:
+        UpdateGameStateClientRpc(CurrentState);
+        HandleStateUpdate(CurrentState);
     }
 
     // ServerRpc to change the game state from client-side (host changes the state)
@@ -43,14 +44,14 @@ public class StateManager : NetworkBehaviour
     }
     PlacingFinalPoint Point;
     Vector3 Origo = new Vector3(0, 0, 0);
-    [SerializeField] Vector3 StartPosition = new Vector3(0,0,0);
+    [SerializeField] Vector3 StartPosition = new Vector3(0, 0, 0);
     private List<NetworkClient> ClientList = new List<NetworkClient>();
     private List<PlayerMovementScript> player_M = new List<PlayerMovementScript>();
     GameObject DungeonGen;
     Dungeongenerator Gen;
     RoomBehaviour Room_Behaviour;
     List<GameObject> room = new List<GameObject>();
-    private List<PlayerShoot>player_S = new List<PlayerShoot>();
+    private List<PlayerShoot> player_S = new List<PlayerShoot>();
     [SerializeField] GameObject Lance;
     [SerializeField] GameObject button1;
     [SerializeField] GameObject button2;
@@ -63,22 +64,19 @@ public class StateManager : NetworkBehaviour
                 // Handle Start state logic
                 if (IsHost)
                 {
-                    if (Input.GetKey(KeyCode.Space))
+                    DungeonGen = GameObject.Find("DungeonGenerator");
+                    Gen = DungeonGen.GetComponent<Dungeongenerator>();
+                    Gen.DungeonStart();
+                    //room = GameObject.Find("Room");
+                    //Room_Behaviour = room.GetComponent<RoomBehaviour>();
+                    Point = DungeonGen.GetComponent<PlacingFinalPoint>();
+                    Point.FindAllRooms();
+                    StartPosition = Point.PlacingFinalTile(Origo);
+                    foreach (NetworkClient player in ClientList)
                     {
-                        DungeonGen = GameObject.Find("DungeonGenerator");
-                        Gen = DungeonGen.GetComponent<Dungeongenerator>();
-                        Gen.DungeonStart();
-                        //room = GameObject.Find("Room");
-                        //Room_Behaviour = room.GetComponent<RoomBehaviour>();
-                        Point = DungeonGen.GetComponent<PlacingFinalPoint>();
-                        Point.FindAllRooms();
-                        StartPosition = Point.PlacingFinalTile(Origo);
-                        foreach(NetworkClient player in ClientList)
-                        {
-                            player.playerObject.transform.position = StartPosition;
-                        }
-                        ChangeGameStateServerRpc(GameState.Gameplay);
+                        player.playerObject.transform.position = StartPosition;
                     }
+                    ChangeGameStateServerRpc(GameState.Gameplay);
                 }
                 if (IsClient)
                 {
@@ -89,7 +87,7 @@ public class StateManager : NetworkBehaviour
                 // Handle Gameplay state logic
                 foreach (PlayerMovementScript Player in player_M)
                 {
-                    if (Input.GetKey(KeyCode.Q))
+                    if (Input.GetKey(KeyCode.E))
                     {
                         if (Cursor.visible)
                         {
@@ -100,7 +98,7 @@ public class StateManager : NetworkBehaviour
                             Cursor.visible = false;
                         }
                     }
-                    if (Input.GetKey(KeyCode.E))
+                    if (Input.GetKey(KeyCode.Q))
                     {
                         if (!Cursor.visible)
                         {
@@ -111,17 +109,18 @@ public class StateManager : NetworkBehaviour
                             Cursor.visible = true;
                         }
                     }
-                        Player.Rotation();
+                    Player.Rotation();
                     Player.Movement();
                     Player.ChechAnimation();
                 }
-                foreach(PlayerShoot shoot in player_S)
+                foreach (PlayerShoot shoot in player_S)
                 {
                     shoot.ShootUpdate();
                 }
                 break;
             case GameState.GameOver:
                 // Handle Game Over state logic
+
                 break;
         }
     }
@@ -132,6 +131,7 @@ public class StateManager : NetworkBehaviour
         player_M.Add(playerobject.GetComponent<PlayerMovementScript>());
         player_S.Add(playerobject.GetComponent<PlayerShoot>());
         print(clientid); print(playerobject);
+        playerobject.GetComponent<PlayerHealth>().PlayerDeath += HandlePlayerDeath;
         //if (StartPosition == new Vector3(0,0,0) && !IsHost)
         //{
         //    Point = DungeonGen.GetComponent<PlacingFinalPoint>();
@@ -159,5 +159,26 @@ public class StateManager : NetworkBehaviour
     {
         public ulong ClientId;
         public NetworkObject playerObject;
+    }
+
+    void OnEnable()
+    {
+        foreach (NetworkClient player in ClientList)
+        {
+            player.playerObject.GetComponent<PlayerHealth>().PlayerDeath += HandlePlayerDeath;
+        }
+    }
+
+    void OnDisable()
+    {
+        foreach (NetworkClient player in ClientList)
+        {
+            player.playerObject.GetComponent<PlayerHealth>().PlayerDeath -= HandlePlayerDeath;
+        }
+    }
+
+    void HandlePlayerDeath(PlayerHealth playerHealth)
+    {
+        ChangeGameStateServerRpc(GameState.GameOver);
     }
 }

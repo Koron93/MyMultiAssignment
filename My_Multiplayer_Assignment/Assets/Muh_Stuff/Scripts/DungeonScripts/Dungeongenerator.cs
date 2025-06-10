@@ -161,7 +161,7 @@ public class Dungeongenerator : MonoBehaviour
                 // Spawn the networked object for all clients
                 print("About to spawn newRoom");
                 newRoom.name += " " + i + "-" + j;
-                newRoom.UpdateRoomServerRpc(currentCell.status);// Update the room's state via RPC
+                newRoom.UpdateRoomClientRpc(currentCell.status);// Update the room's state via RPC
                 print("Spawned newRoom");
                 // Optionally, ensure the object is being synchronized by logging network status
                 if (networkObject.IsSpawned)

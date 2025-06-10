@@ -1,14 +1,22 @@
 using UnityEngine;
 using Unity.Netcode;
+using System.Runtime.CompilerServices;
 
 public class RoomBehaviour : NetworkBehaviour
 {
     public GameObject[] walls; // 0->up, 1->down, 2->right, 3->left
     public GameObject[] doors;
 
+    public void Start()
+    {
+        if (IsClient)
+        {
+            ClientGettingRoomstatusServerRpc(NetworkManager.Singleton.LocalClientId);
+        }
+    }
     // ServerRpc to change room status (called by clients)
     [ServerRpc(RequireOwnership = false)]
-    public void UpdateRoomServerRpc(bool[] status)
+    public void UpdateRoomServerRPC(bool[] status)
     {
         // This will call the ClientRpc to update all clients with the new room status
         UpdateRoomClientRpc(status);
@@ -16,7 +24,7 @@ public class RoomBehaviour : NetworkBehaviour
 
     // ClientRpc to update room status on all clients
     [ClientRpc]
-    public void UpdateRoomClientRpc(bool[] status)
+    public void UpdateRoomClientRpc(bool[] status, ClientRpcParams clientRpcParams = default)
     {
         for (int i = 0; i < status.Length; i++)
         {
@@ -24,11 +32,15 @@ public class RoomBehaviour : NetworkBehaviour
             walls[i].SetActive(!status[i]); // Set wall inactive when the door is open
         }
     }
-    private void OnClientConnected(ulong clientid)
+
+    [ServerRpc(RequireOwnership = false)]
+    private void ClientGettingRoomstatusServerRpc(ulong clientid)
     {
         bool[] currentStatus = GetCurrentRoomStatus(); // Fetch the current room status.
-        UpdateRoomClientRpc(currentStatus);
+
+        UpdateRoomClientRpc(currentStatus, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new[] { clientid } } });
     }
+
 
     // Method to get current room status (this can be your logic for fetching the state)
     private bool[] GetCurrentRoomStatus()

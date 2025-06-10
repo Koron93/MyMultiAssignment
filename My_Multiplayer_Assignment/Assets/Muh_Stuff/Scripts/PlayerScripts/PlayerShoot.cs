@@ -27,29 +27,29 @@ public class PlayerShoot : NetworkBehaviour
         if (IsOwner && Input.GetButtonDown("Fire1"))
         {
             // Only the owner (local client) can shoot
-            ShootProjectileServerRpc();
+            ShootProjectileServerRpc(NetworkManager.Singleton.LocalClientId);
             print("got this far");
         }
     }
 
     [ServerRpc(RequireOwnership = false)]
     // Function to handle the shooting logic
-    void ShootProjectileServerRpc()
+    void ShootProjectileServerRpc(ulong clientid)
     {
         if (projectilePrefab != null && firePoint != null)
         {
             // Call a ServerRpc to spawn the projectile on the server
             print("Now im here");
-            SpawnProjectile(firePoint.position, firePoint.rotation);
+            SpawnProjectile(firePoint.position, firePoint.rotation, clientid);
         }
     }
 
-    void SpawnProjectile(Vector3 position, Quaternion rotation)
+    void SpawnProjectile(Vector3 position, Quaternion rotation, ulong clientid)
     {
         print("Server has received the request to spawn projectile");
 
         // Call the object pool to spawn the projectile on the server
-        GameObject projectile = ObjectPoolManager.SpawnObjectServerRpc(projectilePrefab, position, rotation, OwnerClientId);
+        GameObject projectile = ObjectPoolManager.SpawnObjectServerRpc(projectilePrefab, position, rotation, clientid);
 
         // Ensure the projectile has a NetworkObject component and spawn it across the network
         NetworkObject networkObject = projectile.GetComponent<NetworkObject>();

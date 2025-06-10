@@ -1,10 +1,19 @@
 using UnityEngine;
 using Unity.Netcode;
+using System;
+using System.Diagnostics;
 
 public class PlayerHealth : NetworkBehaviour
 {
     [SerializeField] private float maxHealth = 10f;
     [SerializeField] private Healthbar healthBar;  // Reference to the health bar UI
+
+    public event Action<PlayerHealth> PlayerDeath;
+
+    protected void OnPlayerDeath(PlayerHealth playerHealth)
+    {
+        PlayerDeath?.Invoke(playerHealth);
+    }
 
     // Network variable to keep track of health across the network
     private NetworkVariable<float> currentHealth = new NetworkVariable<float>(10f);
@@ -28,7 +37,7 @@ public class PlayerHealth : NetworkBehaviour
     {
         if (IsServer)
         {
-            Debug.Log("Damage applied to player: " + damage);
+            UnityEngine.Debug.Log("Damage applied to player: " + damage);
             CurrentHealth -= damage;  // Apply the damage
 
             // Update health bar on all clients (including the server)
@@ -36,7 +45,9 @@ public class PlayerHealth : NetworkBehaviour
 
             if (CurrentHealth <= 0)
             {
+                
                 OnDeathClientRpc();
+                OnPlayerDeath(this);
             }
         }
     }
@@ -45,11 +56,13 @@ public class PlayerHealth : NetworkBehaviour
     [ClientRpc]
     public void TakeDamageClientRpc()
     {
-        // Ensure that only the owning client updates their health bar
-        if (IsOwner && healthBar != null)
+        if (!IsOwner) return; // Only update the health bar on the local player
+
+        if (healthBar != null)
         {
-            // Update health bar based on current health and max health
-            healthBar.UpdateHealthBar(currentHealth.Value / maxHealth);
+            float health = currentHealth.Value / maxHealth;
+            UnityEngine.Debug.Log("Current health: " + health);
+            healthBar.UpdateHealthBar(health);
         }
     }
 
@@ -63,8 +76,11 @@ public class PlayerHealth : NetworkBehaviour
 
             // Handle player death (e.g., stop movement, show death UI, etc.)
             // You can also trigger player death animations here
+
+
         }
     }
+
     private void OnClientConnected(ulong clientid)
     {
         if (IsClient)
